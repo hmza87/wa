@@ -27,8 +27,9 @@ Public Class _Default
         If p.Url.AbsoluteUri.Contains(".gifv") Then
 
         ElseIf p.Url.AbsoluteUri.Contains(".gif") Then
-            Dim x As New HtmlLink
-            x.Href = p.Url.AbsoluteUri
+            Dim x As New HyperLink
+            x.Text = p.Author.Name & " [" & p.Author.FullName & "]"
+            x.NavigateUrl = p.Url.AbsoluteUri
 
             img.Attributes("x-data") = p.Url.AbsoluteUri
             img.ImageUrl = p.Url.AbsoluteUri
